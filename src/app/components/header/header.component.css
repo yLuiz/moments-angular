@@ -2,6 +2,7 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 1em;
+    width: 100%;
     border-bottom: 1px solid #777;
 }
 
@@ -31,29 +32,32 @@ nav {
 }
 
 .links a {
+    position: relative;
     padding: .1em;
 }
 
 #add a {
     color: #DEC129;
-    border-radius: 5px;
     font-weight: bold;
 }
 
-a {
-    position: relative;
-}
-
-a::after {
+a::before {
+    position: absolute;
+    bottom: -5px;
     content: '';
     display: block;
-    width: 0%;
+    width: 0;
     height: 2px;
-    position: absolute;
     background-color: #DEC129;
     transition: all .2s ease-in-out;
 }
 
-a.active::after {
+a:hover::before, a.active::before {
     width: 100%;
+}
+
+@media (max-width: 500px) {
+    .links {
+        display: none;
+    }
 }

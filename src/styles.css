@@ -24,7 +24,7 @@ a:hover {
 /* FORM */
 
 form {
-    width: 450px;
+    max-width: 450px;
     margin: 0 auto;
 }
 
@@ -64,7 +64,8 @@ input[type="submit"]:hover {
 }
 
 textarea {
-    resize: vertical;
+    height: 150px;
+    resize: none;
 }
 
 .validation-error p {

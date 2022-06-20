@@ -12,6 +12,7 @@ nav {
 }
 
 .brand img {
+    user-select: none;
     width: 40px;
     margin-right: 0.6em;
 }
@@ -35,8 +36,24 @@ nav {
 
 #add a {
     color: #DEC129;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-#add a:hover {
-    background-color: #efefef;
+a {
+    position: relative;
+}
+
+a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    background-color: #DEC129;
+    transition: all .2s ease-in-out;
+}
+
+a.active::after {
+    width: 100%;
 }

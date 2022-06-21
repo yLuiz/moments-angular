@@ -19,6 +19,10 @@
 }
 
 .moment {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     width: 32%;
     margin-bottom: 1em;
     text-align: center;
@@ -26,6 +30,7 @@
 
 .moment img {
     width: 100%;
+    padding: 20px;
     margin-bottom: 1em;
 }
 
@@ -45,4 +50,26 @@ a {
 
 a:hover {
     background-color: #efefef;
+}
+
+.search-container {
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+.search-container form {
+    width: 30%;
+    position: relative;
+}
+
+.search-container fa-icon {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.search-container input {
+    padding: 0.5em;
+    width: 100%;
+    text-align: center;
 }

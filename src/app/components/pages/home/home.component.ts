@@ -11,9 +11,21 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class HomeComponent implements OnInit {
 
+  faSearch = faSearch;
+  searchTerm: string = '';
+
   allMoments: Moment[] = []
   moments: Moment[] = []
   baseApiUrl = environment.baseApiUrl
+
+  search(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const value = target.value;
+
+    this.moments = this.allMoments.filter(moment => {
+      return moment.title.toLocaleLowerCase().includes(value);
+    })
+  }
 
   constructor(private momentService: MomentService) { }
 
